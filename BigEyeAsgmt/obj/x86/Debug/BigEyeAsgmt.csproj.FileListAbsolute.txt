@@ -1,0 +1,11 @@
+C:\Temp\BigEyeAsgmt\BigEyeAsgmt\obj\x86\Debug\BigEyeAsgmt.ClientForm.resources
+C:\Temp\BigEyeAsgmt\BigEyeAsgmt\obj\x86\Debug\BigEyeAsgmt.DataModule.resources
+C:\Temp\BigEyeAsgmt\BigEyeAsgmt\obj\x86\Debug\BigEyeAsgmt.MainForm.resources
+C:\Temp\BigEyeAsgmt\BigEyeAsgmt\obj\x86\Debug\BigEyeAsgmt.Properties.Resources.resources
+C:\Temp\BigEyeAsgmt\BigEyeAsgmt\obj\x86\Debug\BigEyeAsgmt.csproj.GenerateResource.Cache
+C:\Temp\BigEyeAsgmt\BigEyeAsgmt\bin\Debug\BigEyeAsgmt.exe.config
+C:\Temp\BigEyeAsgmt\BigEyeAsgmt\bin\Debug\BigEyeAsgmt.exe
+C:\Temp\BigEyeAsgmt\BigEyeAsgmt\bin\Debug\BigEyeAsgmt.pdb
+C:\Temp\BigEyeAsgmt\BigEyeAsgmt\obj\x86\Debug\BigEyeAsgmt.exe
+C:\Temp\BigEyeAsgmt\BigEyeAsgmt\obj\x86\Debug\BigEyeAsgmt.pdb
+C:\Temp\BigEyeAsgmt\BigEyeAsgmt\obj\x86\Debug\BigEyeAsgmt.InvestigatorForm.resources
