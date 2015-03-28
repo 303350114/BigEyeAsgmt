@@ -97,6 +97,8 @@ namespace BigEyeAsgmt
         {
             disableClientFormElements();
             resetClientVal();
+            lblPnlClientID.Visible = true;
+            lblPnlClientNO.Visible = true;
 
             btnSaveClient.Text = "Update Client";
             DataRow updateClient = DM.dtClient.Rows[currencyManager.Position];
