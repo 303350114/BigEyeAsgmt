@@ -60,5 +60,23 @@ namespace BigEyeAsgmt
             }
             frmInvestigator.ShowDialog();
         }
+
+        private void btnEquipment_Click(object sender, EventArgs e)
+        {
+            if (frmEquipment == null)
+            {
+                frmEquipment = new EquipmentForm(DM, this);
+            }
+            frmEquipment.ShowDialog();
+        }
+
+        private void btnCase_Click(object sender, EventArgs e)
+        {
+            if (frmCase == null)
+            {
+                frmCase = new CaseForm(DM, this);
+            }
+            frmCase.ShowDialog();
+        }
     }
 }

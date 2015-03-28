@@ -101,6 +101,9 @@
     <EmbeddedResource Include="DataModule.resx">
       <DependentUpon>DataModule.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EquipmentForm.resx">
+      <DependentUpon>EquipmentForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InvestigatorForm.resx">
       <DependentUpon>InvestigatorForm.cs</DependentUpon>
     </EmbeddedResource>

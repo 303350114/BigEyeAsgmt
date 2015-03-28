@@ -122,6 +122,7 @@
             this.btnCase.TabIndex = 3;
             this.btnCase.Text = "Case Maintenance";
             this.btnCase.UseVisualStyleBackColor = true;
+            this.btnCase.Click += new System.EventHandler(this.btnCase_Click);
             // 
             // btnEquipment
             // 
@@ -131,6 +132,7 @@
             this.btnEquipment.TabIndex = 2;
             this.btnEquipment.Text = "Equipment Maintenance";
             this.btnEquipment.UseVisualStyleBackColor = true;
+            this.btnEquipment.Click += new System.EventHandler(this.btnEquipment_Click);
             // 
             // MainForm
             // 

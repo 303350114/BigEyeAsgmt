@@ -9,3 +9,4 @@ C:\Temp\BigEyeAsgmt\BigEyeAsgmt\bin\Debug\BigEyeAsgmt.pdb
 C:\Temp\BigEyeAsgmt\BigEyeAsgmt\obj\x86\Debug\BigEyeAsgmt.exe
 C:\Temp\BigEyeAsgmt\BigEyeAsgmt\obj\x86\Debug\BigEyeAsgmt.pdb
 C:\Temp\BigEyeAsgmt\BigEyeAsgmt\obj\x86\Debug\BigEyeAsgmt.InvestigatorForm.resources
+C:\Temp\BigEyeAsgmt\BigEyeAsgmt\obj\x86\Debug\BigEyeAsgmt.EquipmentForm.resources

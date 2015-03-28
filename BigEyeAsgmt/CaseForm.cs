@@ -11,9 +11,27 @@ namespace BigEyeAsgmt
 {
     public partial class CaseForm : Form
     {
+        private MainForm frmMenu;
+        private DataModule DM;
+        private CurrencyManager currencyManager;
+
         public CaseForm()
         {
             InitializeComponent();
+        }
+
+        public CaseForm(DataModule dm, MainForm menu)
+        {
+            InitializeComponent();
+            DM = dm;
+            frmMenu = menu;
+
+            bindControls();
+        }
+
+        private void bindControls()
+        {
+
         }
     }
 }
