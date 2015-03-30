@@ -63,6 +63,7 @@
     <Compile Include="CaseForm.Designer.cs">
       <DependentUpon>CaseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Client.cs" />
     <Compile Include="ClientForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +96,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CaseForm.resx">
+      <DependentUpon>CaseForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ClientForm.resx">
       <DependentUpon>ClientForm.cs</DependentUpon>
     </EmbeddedResource>
