@@ -20,6 +20,11 @@ namespace BigEyeAsgmt
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Overloading the constructor
+        /// </summary>
+        /// <param name="dm"> DataModule </param>
+        /// <param name="menu"> MainForm </param>
         public EquipmentForm(DataModule dm, MainForm menu)
         {
             InitializeComponent();
@@ -29,6 +34,9 @@ namespace BigEyeAsgmt
             bindControls();
         }
 
+        /// <summary>
+        /// Bind the values to elements of the Equipment Form
+        /// </summary>
         private void bindControls()
         {
             lblEquipmentID.DataBindings.Add("Text", DM.BigEyeDS, "T_Equipment.EquipmentID");
@@ -45,6 +53,11 @@ namespace BigEyeAsgmt
             currencyManager = (CurrencyManager)this.BindingContext[DM.BigEyeDS, "T_Equipment"];
         }
 
+        /// <summary>
+        /// Select the previous Equipment value.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnPrevious_Click(object sender, EventArgs e)
         {
             if (currencyManager.Position > 0)
@@ -53,6 +66,11 @@ namespace BigEyeAsgmt
             }
         }
 
+        /// <summary>
+        /// Select the next Equipment value.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnNext_Click(object sender, EventArgs e)
         {
             if (currencyManager.Position < (currencyManager.Count - 1))
@@ -61,6 +79,11 @@ namespace BigEyeAsgmt
             }
         }
 
+        /// <summary>
+        /// Show the panel pnlEquipment when click Add Equipment.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAddEquipment_Click(object sender, EventArgs e)
         {
             disableEquipmentFormElements();
@@ -71,9 +94,16 @@ namespace BigEyeAsgmt
             lblPnlInvestigatorID.Visible = false;
             cmbInvestigatorID.Visible = false;
 
+            btnSaveEquipment.Text = "Add Equipment";
+
             pnlEquipment.Show();
         }
 
+        /// <summary>
+        /// Show the panel pnlEquipment when click Modify with selected equipment.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnModifyEquipment_Click(object sender, EventArgs e)
         {
             disableEquipmentFormElements();
@@ -100,6 +130,11 @@ namespace BigEyeAsgmt
             pnlEquipment.Show();
         }
 
+        /// <summary>
+        /// Remove selected equipment.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDeleteEquipment_Click(object sender, EventArgs e)
         {
             DataRow deleteEquipmentRow = DM.dtEquipment.Rows[currencyManager.Position];
@@ -119,6 +154,11 @@ namespace BigEyeAsgmt
             }
         }
 
+        /// <summary>
+        /// Save equipment data when click Add/Update.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSaveEquipment_Click(object sender, EventArgs e)
         {
             if (txtPnlDescription.Text == "")
@@ -160,17 +200,28 @@ namespace BigEyeAsgmt
 
         }
 
+        /// <summary>
+        /// Close the Equipment Form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnReturn_Click(object sender, EventArgs e)
         {
             Close();
         }
 
+        /// <summary>
+        /// Reset equipment value when Add/Modify equipment.
+        /// </summary>
         private void resetEquipmentVal()
         {
             lblPnlEquipmentID.Text = null;
             txtPnlDescription.Text = "";
         }
 
+        /// <summary>
+        /// Enable all of disabled elements in Equipment Form.
+        /// </summary>
         private void enableEquipmentFormElements() 
         {
             lstEquipments.Visible = true;
@@ -183,6 +234,9 @@ namespace BigEyeAsgmt
             btnReturn.Enabled = true;
         }
 
+        /// <summary>
+        /// Disable part of elements of Equipment Form.
+        /// </summary>
         private void disableEquipmentFormElements()
         {
             lstEquipments.Visible = false;
@@ -195,6 +249,11 @@ namespace BigEyeAsgmt
             btnReturn.Enabled = false;
         }
 
+        /// <summary>
+        /// Cancel Add a new equipment or Cancel modify a selected value.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCancel_Click(object sender, EventArgs e)
         {
             enableEquipmentFormElements();

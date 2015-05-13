@@ -17,6 +17,7 @@ namespace BigEyeAsgmt
         private EquipmentForm frmEquipment;      		// the reference to the equipment form
         private CaseForm frmCase;         		// the reference to the case form
         private CaseAssignmentForm frmCaseAssignment;       		// the reference to the case assignment form
+        private InvoicesForm frmInvoicesForm;
 
         public MainForm()
         {
@@ -77,6 +78,24 @@ namespace BigEyeAsgmt
                 frmCase = new CaseForm(DM, this);
             }
             frmCase.ShowDialog();
+        }
+
+        private void btnCaseAssignment_Click(object sender, EventArgs e)
+        {
+            if (frmCaseAssignment == null)
+            {
+                frmCaseAssignment = new CaseAssignmentForm(DM, this);
+            }
+            frmCaseAssignment.ShowDialog();
+        }
+
+        private void btnInvoices_Click_1(object sender, EventArgs e)
+        {
+            if (frmInvoicesForm == null)
+            {
+                frmInvoicesForm = new InvoicesForm(DM, this);
+            }
+            frmInvoicesForm.ShowDialog();
         }
     }
 }

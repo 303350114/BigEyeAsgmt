@@ -11,3 +11,7 @@ C:\Temp\BigEyeAsgmt\BigEyeAsgmt\obj\x86\Debug\BigEyeAsgmt.pdb
 C:\Temp\BigEyeAsgmt\BigEyeAsgmt\obj\x86\Debug\BigEyeAsgmt.InvestigatorForm.resources
 C:\Temp\BigEyeAsgmt\BigEyeAsgmt\obj\x86\Debug\BigEyeAsgmt.EquipmentForm.resources
 C:\Temp\BigEyeAsgmt\BigEyeAsgmt\obj\x86\Debug\BigEyeAsgmt.CaseForm.resources
+C:\Temp\BigEyeAsgmt\BigEyeAsgmt\obj\x86\Debug\BigEyeAsgmt.CaseAssignmentForm.resources
+C:\Temp\BigEyeAsgmt\BigEyeAsgmt\obj\x86\Debug\BigEyeAsgmt.InvoicesForm.resources
+C:\Temp\BigEyeAsgmt\BigEyeAsgmt\obj\x86\Debug\BigEyeAsgmt.AssignmentForm.resources
+C:\Temp\BigEyeAsgmt\BigEyeAsgmt\obj\x86\Debug\BigEyeAsgmt.csprojResolveAssemblyReference.cache

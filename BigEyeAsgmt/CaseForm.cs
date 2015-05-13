@@ -22,6 +22,11 @@ namespace BigEyeAsgmt
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Overloading the constructor
+        /// </summary>
+        /// <param name="dm"> DataModule </param>
+        /// <param name="menu"> MainForm </param>
         public CaseForm(DataModule dm, MainForm menu)
         {
             InitializeComponent();
@@ -31,10 +36,16 @@ namespace BigEyeAsgmt
             bindControls();
         }
 
+        /// <summary>
+        /// Bind the values to elements of the Case Form
+        /// </summary>
         private void bindControls()
         {
             dtCase = DM.dtCase; //get case datatable from DataModule
-            dtCase.Columns.Add("ClientName");//add a new column to the case datatable
+            if (!dtCase.Columns.Contains("ClientName"))
+            {
+                dtCase.Columns.Add("ClientName");//add a new column to the case datatable
+            }
             int RowsCount = dtCase.Rows.Count;
             for (int i = 0; i < RowsCount; i++)//add values for the new added column of Client Name
             {
@@ -52,6 +63,7 @@ namespace BigEyeAsgmt
             txtCaseType.DataBindings.Add("Text", dtCase, "CaseType");
             txtDateOpened.DataBindings.Add("Text", dtCase, "DateOpened");
             txtClient.DataBindings.Add("Text", dtCase, "ClientName");
+            lblClientID.DataBindings.Add("Text", dtCase, "ClientID");
 
             txtDescription.Enabled = false;
             txtStatus.Enabled = false;
@@ -72,6 +84,11 @@ namespace BigEyeAsgmt
             dtCaseType.Rows.Add("Credit Check");
         }
 
+        /// <summary>
+        /// Select the previous Case value.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnPrevious_Click(object sender, EventArgs e)
         {
             if (currencyManager.Position > 0)
@@ -80,6 +97,11 @@ namespace BigEyeAsgmt
             }
         }
 
+        /// <summary>
+        /// Select the Next Case value.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnNext_Click(object sender, EventArgs e)
         {
             if (currencyManager.Position < (currencyManager.Count - 1))
@@ -88,6 +110,11 @@ namespace BigEyeAsgmt
             }
         }
 
+        /// <summary>
+        /// Show the panel pnlCase when click Add case
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAddCase_Click(object sender, EventArgs e)
         {
             disableCaseFormElements();
@@ -95,7 +122,7 @@ namespace BigEyeAsgmt
 
             lblPnlCaseID.Visible = false;
             lblPnlCaseNO.Visible = false;
-
+            btnSaveCase.Text = "Add Case";
             cmbPnlCaseType.DataSource = dtCaseType;
             cmbPnlCaseType.ValueMember = "caseType";
             cmbPnlCaseType.DisplayMember = "caseType";
@@ -107,13 +134,18 @@ namespace BigEyeAsgmt
             pnlCase.Show();
         }
 
+        /// <summary>
+        /// Remove selected case.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDeleteCase_Click(object sender, EventArgs e)
         {
             if(txtStatus.Text.Equals("Open"))
             {
                 MessageBox.Show("You may only delete closed Cases", "Error");
             }
-            if (MessageBox.Show("Are you sure you want delete this record?", "Warning", 
+            else if (MessageBox.Show("Are you sure you want delete this record?", "Warning", 
                     MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 DataRow deleteCase = DM.dtCase.Rows[currencyManager.Position];
@@ -123,6 +155,11 @@ namespace BigEyeAsgmt
             }
         }
 
+        /// <summary>
+        /// Show the panel pnlCase when click Modify with selected case.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnModifyCase_Click(object sender, EventArgs e)
         {
             if (txtStatus.Text.Equals("Closed"))
@@ -162,14 +199,24 @@ namespace BigEyeAsgmt
             pnlCase.Show();
         }
 
+        /// <summary>
+        /// Close the Case Form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnReturn_Click(object sender, EventArgs e)
         {
             Close();
         }
 
+        /// <summary>
+        /// Save cases data when click Add/Update.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSaveCase_Click(object sender, EventArgs e)
         {
-            if (txtDescription.Text == "")
+            if (txtPnlDescription.Text == "")
             {
                 MessageBox.Show("You must enter a value for each of the fields", "Error");
             }
@@ -184,6 +231,7 @@ namespace BigEyeAsgmt
                     caseRow["CaseType"] = cmbPnlCaseType.SelectedValue.ToString();
                     caseRow["ClientID"] = Convert.ToInt64(cmbPnlClient.SelectedValue.ToString());
                     caseRow["ClientName"] = cmbPnlClient.Text;
+                    caseRow["Status"] = "Open";
 
                     DM.dtCase.Rows.Add(caseRow);
                     DM.updateCase();
@@ -214,12 +262,22 @@ namespace BigEyeAsgmt
             }
         }
 
+        /// <summary>
+        /// Cancel Add a new case or cancel Modify selected case.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCancel_Click(object sender, EventArgs e)
         {
             enableCaseFormElements();
             pnlCase.Hide();
         }
 
+        /// <summary>
+        /// Combine last name and first name to Client which is in Panel pnlCase.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cmbPnlClient_Format(object sender, ListControlConvertEventArgs e)
         {
             DataRow dr = ((DataRowView)e.ListItem).Row;
@@ -230,13 +288,18 @@ namespace BigEyeAsgmt
             e.Value = lastname + " " + firstname;
         }
 
+        /// <summary>
+        /// Mark selected cases' Open status to Closed.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnMarkClosed_Click(object sender, EventArgs e)
         {
             if (txtStatus.Text.Equals("Closed"))
             {
                 MessageBox.Show("The Case is already closed", "Error");
             }
-            else
+            else if(MessageBox.Show("Are you sure you want Close this Case?", "Warning", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 DataRow caseRow = dtCase.Rows[currencyManager.Position];
 
@@ -257,6 +320,9 @@ namespace BigEyeAsgmt
             }
         }
 
+        /// <summary>
+        /// Enable all of the disabled elements in Case Form
+        /// </summary>
         private void enableCaseFormElements()
         {
             lstCases.Visible = true;
@@ -267,8 +333,12 @@ namespace BigEyeAsgmt
             btnModifyCase.Enabled = true;
             btnDeleteCase.Enabled = true;
             btnReturn.Enabled = true;
+            btnMarkClosed.Enabled = true;
         }
 
+        /// <summary>
+        /// Disable part of elements of Case Form.
+        /// </summary>
         private void disableCaseFormElements()
         {
             lstCases.Visible = false;
@@ -279,8 +349,12 @@ namespace BigEyeAsgmt
             btnModifyCase.Enabled = false;
             btnDeleteCase.Enabled = false;
             btnReturn.Enabled = false;
+            btnMarkClosed.Enabled = false;
         }
 
+        /// <summary>
+        /// Reset part of Case value in panel pnlCase.
+        /// </summary>
         private void resetCaseVal()
         {
             lblPnlCaseID.Text = null;

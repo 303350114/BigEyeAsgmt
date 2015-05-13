@@ -70,6 +70,7 @@
             this.btnInvoices.TabIndex = 0;
             this.btnInvoices.Text = "Invoices";
             this.btnInvoices.UseVisualStyleBackColor = true;
+            this.btnInvoices.Click += new System.EventHandler(this.btnInvoices_Click_1);
             // 
             // grpMaintenance
             // 
@@ -103,6 +104,7 @@
             this.btnCaseAssignment.TabIndex = 4;
             this.btnCaseAssignment.Text = "Case Assignment Maintenance";
             this.btnCaseAssignment.UseVisualStyleBackColor = true;
+            this.btnCaseAssignment.Click += new System.EventHandler(this.btnCaseAssignment_Click);
             // 
             // btnInvestigator
             // 

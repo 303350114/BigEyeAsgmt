@@ -357,7 +357,7 @@
   <xs:element name="Big_EyeDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="Big_EyeDataSet" msprop:Generator_UserDSName="Big_EyeDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="T_Assignment" msprop:Generator_TableClassName="T_AssignmentDataTable" msprop:Generator_TableVarName="tableT_Assignment" msprop:Generator_TablePropName="T_Assignment" msprop:Generator_RowDeletingName="T_AssignmentRowDeleting" msprop:Generator_RowChangingName="T_AssignmentRowChanging" msprop:Generator_RowEvHandlerName="T_AssignmentRowChangeEventHandler" msprop:Generator_RowDeletedName="T_AssignmentRowDeleted" msprop:Generator_UserTableName="T_Assignment" msprop:Generator_RowChangedName="T_AssignmentRowChanged" msprop:Generator_RowEvArgName="T_AssignmentRowChangeEvent" msprop:Generator_RowClassName="T_AssignmentRow">
+        <xs:element name="T_Assignment" msprop:Generator_TableClassName="T_AssignmentDataTable" msprop:Generator_TableVarName="tableT_Assignment" msprop:Generator_RowChangedName="T_AssignmentRowChanged" msprop:Generator_TablePropName="T_Assignment" msprop:Generator_RowDeletingName="T_AssignmentRowDeleting" msprop:Generator_RowChangingName="T_AssignmentRowChanging" msprop:Generator_RowEvHandlerName="T_AssignmentRowChangeEventHandler" msprop:Generator_RowDeletedName="T_AssignmentRowDeleted" msprop:Generator_RowClassName="T_AssignmentRow" msprop:Generator_UserTableName="T_Assignment" msprop:Generator_RowEvArgName="T_AssignmentRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CaseID" msprop:Generator_ColumnVarNameInTable="columnCaseID" msprop:Generator_ColumnPropNameInRow="CaseID" msprop:Generator_ColumnPropNameInTable="CaseIDColumn" msprop:Generator_UserColumnName="CaseID" type="xs:int" />
@@ -367,7 +367,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="T_Case" msprop:Generator_TableClassName="T_CaseDataTable" msprop:Generator_TableVarName="tableT_Case" msprop:Generator_TablePropName="T_Case" msprop:Generator_RowDeletingName="T_CaseRowDeleting" msprop:Generator_RowChangingName="T_CaseRowChanging" msprop:Generator_RowEvHandlerName="T_CaseRowChangeEventHandler" msprop:Generator_RowDeletedName="T_CaseRowDeleted" msprop:Generator_UserTableName="T_Case" msprop:Generator_RowChangedName="T_CaseRowChanged" msprop:Generator_RowEvArgName="T_CaseRowChangeEvent" msprop:Generator_RowClassName="T_CaseRow">
+        <xs:element name="T_Case" msprop:Generator_TableClassName="T_CaseDataTable" msprop:Generator_TableVarName="tableT_Case" msprop:Generator_RowChangedName="T_CaseRowChanged" msprop:Generator_TablePropName="T_Case" msprop:Generator_RowDeletingName="T_CaseRowDeleting" msprop:Generator_RowChangingName="T_CaseRowChanging" msprop:Generator_RowEvHandlerName="T_CaseRowChangeEventHandler" msprop:Generator_RowDeletedName="T_CaseRowDeleted" msprop:Generator_RowClassName="T_CaseRow" msprop:Generator_UserTableName="T_Case" msprop:Generator_RowEvArgName="T_CaseRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CaseID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnCaseID" msprop:Generator_ColumnPropNameInRow="CaseID" msprop:Generator_ColumnPropNameInTable="CaseIDColumn" msprop:Generator_UserColumnName="CaseID" type="xs:int" />
@@ -397,7 +397,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="T_Client" msprop:Generator_TableClassName="T_ClientDataTable" msprop:Generator_TableVarName="tableT_Client" msprop:Generator_TablePropName="T_Client" msprop:Generator_RowDeletingName="T_ClientRowDeleting" msprop:Generator_RowChangingName="T_ClientRowChanging" msprop:Generator_RowEvHandlerName="T_ClientRowChangeEventHandler" msprop:Generator_RowDeletedName="T_ClientRowDeleted" msprop:Generator_UserTableName="T_Client" msprop:Generator_RowChangedName="T_ClientRowChanged" msprop:Generator_RowEvArgName="T_ClientRowChangeEvent" msprop:Generator_RowClassName="T_ClientRow">
+        <xs:element name="T_Client" msprop:Generator_TableClassName="T_ClientDataTable" msprop:Generator_TableVarName="tableT_Client" msprop:Generator_RowChangedName="T_ClientRowChanged" msprop:Generator_TablePropName="T_Client" msprop:Generator_RowDeletingName="T_ClientRowDeleting" msprop:Generator_RowChangingName="T_ClientRowChanging" msprop:Generator_RowEvHandlerName="T_ClientRowChangeEventHandler" msprop:Generator_RowDeletedName="T_ClientRowDeleted" msprop:Generator_RowClassName="T_ClientRow" msprop:Generator_UserTableName="T_Client" msprop:Generator_RowEvArgName="T_ClientRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ClientID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnClientID" msprop:Generator_ColumnPropNameInRow="ClientID" msprop:Generator_ColumnPropNameInTable="ClientIDColumn" msprop:Generator_UserColumnName="ClientID" type="xs:int" />
@@ -446,7 +446,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="T_Equipment" msprop:Generator_TableClassName="T_EquipmentDataTable" msprop:Generator_TableVarName="tableT_Equipment" msprop:Generator_TablePropName="T_Equipment" msprop:Generator_RowDeletingName="T_EquipmentRowDeleting" msprop:Generator_RowChangingName="T_EquipmentRowChanging" msprop:Generator_RowEvHandlerName="T_EquipmentRowChangeEventHandler" msprop:Generator_RowDeletedName="T_EquipmentRowDeleted" msprop:Generator_UserTableName="T_Equipment" msprop:Generator_RowChangedName="T_EquipmentRowChanged" msprop:Generator_RowEvArgName="T_EquipmentRowChangeEvent" msprop:Generator_RowClassName="T_EquipmentRow">
+        <xs:element name="T_Equipment" msprop:Generator_TableClassName="T_EquipmentDataTable" msprop:Generator_TableVarName="tableT_Equipment" msprop:Generator_RowChangedName="T_EquipmentRowChanged" msprop:Generator_TablePropName="T_Equipment" msprop:Generator_RowDeletingName="T_EquipmentRowDeleting" msprop:Generator_RowChangingName="T_EquipmentRowChanging" msprop:Generator_RowEvHandlerName="T_EquipmentRowChangeEventHandler" msprop:Generator_RowDeletedName="T_EquipmentRowDeleted" msprop:Generator_RowClassName="T_EquipmentRow" msprop:Generator_UserTableName="T_Equipment" msprop:Generator_RowEvArgName="T_EquipmentRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="EquipmentID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnEquipmentID" msprop:Generator_ColumnPropNameInRow="EquipmentID" msprop:Generator_ColumnPropNameInTable="EquipmentIDColumn" msprop:Generator_UserColumnName="EquipmentID" type="xs:int" />
@@ -461,7 +461,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="T_Investigator" msprop:Generator_TableClassName="T_InvestigatorDataTable" msprop:Generator_TableVarName="tableT_Investigator" msprop:Generator_TablePropName="T_Investigator" msprop:Generator_RowDeletingName="T_InvestigatorRowDeleting" msprop:Generator_RowChangingName="T_InvestigatorRowChanging" msprop:Generator_RowEvHandlerName="T_InvestigatorRowChangeEventHandler" msprop:Generator_RowDeletedName="T_InvestigatorRowDeleted" msprop:Generator_UserTableName="T_Investigator" msprop:Generator_RowChangedName="T_InvestigatorRowChanged" msprop:Generator_RowEvArgName="T_InvestigatorRowChangeEvent" msprop:Generator_RowClassName="T_InvestigatorRow">
+        <xs:element name="T_Investigator" msprop:Generator_TableClassName="T_InvestigatorDataTable" msprop:Generator_TableVarName="tableT_Investigator" msprop:Generator_RowChangedName="T_InvestigatorRowChanged" msprop:Generator_TablePropName="T_Investigator" msprop:Generator_RowDeletingName="T_InvestigatorRowDeleting" msprop:Generator_RowChangingName="T_InvestigatorRowChanging" msprop:Generator_RowEvHandlerName="T_InvestigatorRowChangeEventHandler" msprop:Generator_RowDeletedName="T_InvestigatorRowDeleted" msprop:Generator_RowClassName="T_InvestigatorRow" msprop:Generator_UserTableName="T_Investigator" msprop:Generator_RowEvArgName="T_InvestigatorRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="InvestigatorID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnInvestigatorID" msprop:Generator_ColumnPropNameInRow="InvestigatorID" msprop:Generator_ColumnPropNameInTable="InvestigatorIDColumn" msprop:Generator_UserColumnName="InvestigatorID" type="xs:int" />
@@ -514,13 +514,16 @@
       <xs:selector xpath=".//mstns:T_Investigator" />
       <xs:field xpath="mstns:InvestigatorID" />
     </xs:unique>
+    <xs:keyref name="CASE_ASSIGNMENT" refer="T_Case_Constraint1" msprop:rel_Generator_UserChildTable="T_Assignment" msprop:rel_Generator_ChildPropName="GetT_AssignmentRows" msprop:rel_Generator_UserRelationName="CASE_ASSIGNMENT" msprop:rel_Generator_RelationVarName="relationCASE_ASSIGNMENT" msprop:rel_Generator_UserParentTable="T_Case" msprop:rel_Generator_ParentPropName="T_CaseRow" msdata:UpdateRule="None" msdata:DeleteRule="None">
+      <xs:selector xpath=".//mstns:T_Assignment" />
+      <xs:field xpath="mstns:CaseID" />
+    </xs:keyref>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="CaseAssignment" msdata:parent="T_Case" msdata:child="T_Assignment" msdata:parentkey="CaseID" msdata:childkey="CaseID" msprop:Generator_UserChildTable="T_Assignment" msprop:Generator_ChildPropName="GetT_AssignmentRows" msprop:Generator_UserRelationName="CaseAssignment" msprop:Generator_RelationVarName="relationCaseAssignment" msprop:Generator_UserParentTable="T_Case" msprop:Generator_ParentPropName="T_CaseRow" />
-      <msdata:Relationship name="InvestigatorAssignment" msdata:parent="T_Investigator" msdata:child="T_Assignment" msdata:parentkey="InvestigatorID" msdata:childkey="InvestigatorID" msprop:Generator_UserChildTable="T_Assignment" msprop:Generator_ChildPropName="GetT_AssignmentRows" msprop:Generator_UserRelationName="InvestigatorAssignment" msprop:Generator_RelationVarName="relationInvestigatorAssignment" msprop:Generator_UserParentTable="T_Investigator" msprop:Generator_ParentPropName="T_InvestigatorRow" />
-      <msdata:Relationship name="ClientCase" msdata:parent="T_Client" msdata:child="T_Case" msdata:parentkey="ClientID" msdata:childkey="ClientID" msprop:Generator_UserChildTable="T_Case" msprop:Generator_ChildPropName="GetT_CaseRows" msprop:Generator_UserRelationName="ClientCase" msprop:Generator_RelationVarName="relationClientCase" msprop:Generator_UserParentTable="T_Client" msprop:Generator_ParentPropName="T_ClientRow" />
-      <msdata:Relationship name="InvestigatorEquipment" msdata:parent="T_Investigator" msdata:child="T_Equipment" msdata:parentkey="InvestigatorID" msdata:childkey="InvestigatorID" msprop:Generator_UserChildTable="T_Equipment" msprop:Generator_ChildPropName="GetT_EquipmentRows" msprop:Generator_UserRelationName="InvestigatorEquipment" msprop:Generator_RelationVarName="relationInvestigatorEquipment" msprop:Generator_UserParentTable="T_Investigator" msprop:Generator_ParentPropName="T_InvestigatorRow" />
+      <msdata:Relationship name="InvestigatorAssignment" msdata:parent="T_Investigator" msdata:child="T_Assignment" msdata:parentkey="InvestigatorID" msdata:childkey="InvestigatorID" msprop:Generator_UserChildTable="T_Assignment" msprop:Generator_ChildPropName="GetT_AssignmentRows" msprop:Generator_UserRelationName="InvestigatorAssignment" msprop:Generator_ParentPropName="T_InvestigatorRow" msprop:Generator_RelationVarName="relationInvestigatorAssignment" msprop:Generator_UserParentTable="T_Investigator" />
+      <msdata:Relationship name="ClientCase" msdata:parent="T_Client" msdata:child="T_Case" msdata:parentkey="ClientID" msdata:childkey="ClientID" msprop:Generator_UserChildTable="T_Case" msprop:Generator_ChildPropName="GetT_CaseRows" msprop:Generator_UserRelationName="ClientCase" msprop:Generator_ParentPropName="T_ClientRow" msprop:Generator_RelationVarName="relationClientCase" msprop:Generator_UserParentTable="T_Client" />
+      <msdata:Relationship name="InvestigatorEquipment" msdata:parent="T_Investigator" msdata:child="T_Equipment" msdata:parentkey="InvestigatorID" msdata:childkey="InvestigatorID" msprop:Generator_UserChildTable="T_Equipment" msprop:Generator_ChildPropName="GetT_EquipmentRows" msprop:Generator_UserRelationName="InvestigatorEquipment" msprop:Generator_ParentPropName="T_InvestigatorRow" msprop:Generator_RelationVarName="relationInvestigatorEquipment" msprop:Generator_UserParentTable="T_Investigator" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

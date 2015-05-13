@@ -20,6 +20,11 @@ namespace BigEyeAsgmt
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Overloading the constructor
+        /// </summary>
+        /// <param name="dm"> DataModule </param>
+        /// <param name="menu"> MainForm </param>
         public InvestigatorForm(DataModule dm, MainForm menu)
         {
             InitializeComponent();
@@ -29,6 +34,9 @@ namespace BigEyeAsgmt
             bindControls();
         }
 
+        /// <summary>
+        /// Bind the values to elements of the Investigator Form
+        /// </summary>
         private void bindControls()
         {
             lblInvestigatorID.DataBindings.Add("Text", DM.BigEyeDS, "T_Investigator.InvestigatorID");
@@ -51,11 +59,21 @@ namespace BigEyeAsgmt
             currencyManager = (CurrencyManager)this.BindingContext[DM.BigEyeDS, "T_Investigator"];
         }
 
+        /// <summary>
+        /// Close the Investigator Form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnReturn_Click(object sender, EventArgs e)
         {
             Close();
         }
 
+        /// <summary>
+        /// Select the previous Investigator value.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnPrevious_Click(object sender, EventArgs e)
         {
             if (currencyManager.Position > 0)
@@ -64,6 +82,11 @@ namespace BigEyeAsgmt
             }
         }
 
+        /// <summary>
+        /// Select the previous Investigator value.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnNext_Click(object sender, EventArgs e)
         {
             if (currencyManager.Position < (currencyManager.Count - 1))
@@ -72,6 +95,11 @@ namespace BigEyeAsgmt
             }
         }
 
+        /// <summary>
+        /// Show the panel pnlInvestigator when click Add Investigator.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAddInvestigator_Click(object sender, EventArgs e)
         {
             disableInvestigatorFormElements();
@@ -80,12 +108,18 @@ namespace BigEyeAsgmt
             lblPnlInvestigatorNO.Visible = false;
             ckLicensedTrue.Visible = false;
             ckLicensedFalse.Visible = false;
+            txtPnlLicensed.Visible = true;
 
             btnSaveInvestigator.Text = "Save Investigator";
 
             pnlInvestigator.Show();
         }
 
+        /// <summary>
+        /// Show the panel pnlInvestigator when click Modify Investigator.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnModifyInvestigator_Click(object sender, EventArgs e)
         {
             disableInvestigatorFormElements();
@@ -116,12 +150,22 @@ namespace BigEyeAsgmt
             pnlInvestigator.Show();
         }
 
+        /// <summary>
+        /// Save Investigator data when Add/Update.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSaveInvestigator_Click(object sender, EventArgs e)
         {
             if (txtPnlLastName.Text == "" || txtPnlFirstName.Text == "" || txtPnlHourlyRate.Text == ""
                 || txtPnlCellPhone.Text == "")
             {
                 MessageBox.Show("You must enter a value for each of the text fields", "Error");
+            }
+            else if (txtPnlLicensed.Text == "" || (txtPnlLicensed.Text.ToLower().Equals("true") || txtPnlLicensed.Text.ToLower().Equals("false")))
+            {
+                MessageBox.Show("Please enter a valid licensed status", "Error");
+                txtPnlLicensed.Focus();
             }
             else
             {
@@ -133,7 +177,7 @@ namespace BigEyeAsgmt
                     investigatorRow["FirstName"] = txtPnlFirstName.Text;
                     investigatorRow["HourlyRate"] = txtPnlHourlyRate.Text;
                     investigatorRow["CellPhone"] = txtPnlCellPhone.Text;
-                    investigatorRow["Licensed"] = txtPnlLicensed.Text == ""?"False":"True";
+                    investigatorRow["Licensed"] = txtPnlLicensed.Text == "" ? "False" : "True";
 
                     DM.dtInvestigator.Rows.Add(investigatorRow);
                     DM.updateInvestigator();
@@ -164,6 +208,11 @@ namespace BigEyeAsgmt
             }
         }
 
+        /// <summary>
+        /// Remove selected Investigator.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDeleteInvestigator_Click(object sender, EventArgs e)
         {
             DataRow deleteInvestigatorRow = DM.dtInvestigator.Rows[currencyManager.Position];
@@ -171,7 +220,7 @@ namespace BigEyeAsgmt
             DataRow[] equipmentRow = DM.dtEquipment.Select("InvestigatorID = " + lblInvestigatorID.Text);
             if (asgmtRow.Length != 0)
             {
-                MessageBox.Show("You may only delete Investigators who are not assigned to cases", "Error");
+                MessageBox.Show("You may only delete Investigators who are not assigned to assignments", "Error");
             }
             else if (equipmentRow.Length != 0)
             {
@@ -189,6 +238,11 @@ namespace BigEyeAsgmt
             }
         }
 
+        /// <summary>
+        /// Cancel Add a new investigator or cancel Modify selected investigator.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCancel_Click(object sender, EventArgs e)
         {
             enableInvestigatorFormElements();
@@ -196,6 +250,9 @@ namespace BigEyeAsgmt
             pnlInvestigator.Hide();
         }
 
+        /// <summary>
+        /// Enable all of disabled elements in Investigator Form. 
+        /// </summary>
         private void enableInvestigatorFormElements()
         {
             lstInvestigators.Visible = true;
@@ -207,6 +264,9 @@ namespace BigEyeAsgmt
             btnReturn.Enabled = true;
         }
 
+        /// <summary>
+        /// Disable part of elements of Investigator Form.
+        /// </summary>
         private void disableInvestigatorFormElements()
         {
             lstInvestigators.Visible = false;
@@ -218,6 +278,9 @@ namespace BigEyeAsgmt
             btnReturn.Enabled = false;
         }
 
+        /// <summary>
+        /// Reset Investigator value when Add/Modify.
+        /// </summary>
         private void resetInvestigatorVal()
         {
             lblPnlInvestigatorID.Text = null;

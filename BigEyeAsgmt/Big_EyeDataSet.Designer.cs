@@ -34,7 +34,7 @@ namespace BigEyeAsgmt {
         
         private T_InvestigatorDataTable tableT_Investigator;
         
-        private global::System.Data.DataRelation relationCaseAssignment;
+        private global::System.Data.DataRelation relationCASE_ASSIGNMENT;
         
         private global::System.Data.DataRelation relationInvestigatorAssignment;
         
@@ -298,7 +298,7 @@ namespace BigEyeAsgmt {
                     this.tableT_Investigator.InitVars();
                 }
             }
-            this.relationCaseAssignment = this.Relations["CaseAssignment"];
+            this.relationCASE_ASSIGNMENT = this.Relations["CASE_ASSIGNMENT"];
             this.relationInvestigatorAssignment = this.Relations["InvestigatorAssignment"];
             this.relationClientCase = this.Relations["ClientCase"];
             this.relationInvestigatorEquipment = this.Relations["InvestigatorEquipment"];
@@ -322,10 +322,18 @@ namespace BigEyeAsgmt {
             base.Tables.Add(this.tableT_Equipment);
             this.tableT_Investigator = new T_InvestigatorDataTable();
             base.Tables.Add(this.tableT_Investigator);
-            this.relationCaseAssignment = new global::System.Data.DataRelation("CaseAssignment", new global::System.Data.DataColumn[] {
+            global::System.Data.ForeignKeyConstraint fkc;
+            fkc = new global::System.Data.ForeignKeyConstraint("CASE_ASSIGNMENT", new global::System.Data.DataColumn[] {
+                        this.tableT_Case.CaseIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableT_Assignment.CaseIDColumn});
+            this.tableT_Assignment.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.None;
+            this.relationCASE_ASSIGNMENT = new global::System.Data.DataRelation("CASE_ASSIGNMENT", new global::System.Data.DataColumn[] {
                         this.tableT_Case.CaseIDColumn}, new global::System.Data.DataColumn[] {
                         this.tableT_Assignment.CaseIDColumn}, false);
-            this.Relations.Add(this.relationCaseAssignment);
+            this.Relations.Add(this.relationCASE_ASSIGNMENT);
             this.relationInvestigatorAssignment = new global::System.Data.DataRelation("InvestigatorAssignment", new global::System.Data.DataColumn[] {
                         this.tableT_Investigator.InvestigatorIDColumn}, new global::System.Data.DataColumn[] {
                         this.tableT_Assignment.InvestigatorIDColumn}, false);
@@ -557,15 +565,15 @@ namespace BigEyeAsgmt {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public T_AssignmentRow AddT_AssignmentRow(T_CaseRow parentT_CaseRowByCaseAssignment, T_InvestigatorRow parentT_InvestigatorRowByInvestigatorAssignment, int Hours, System.DateTime DateAssigned) {
+            public T_AssignmentRow AddT_AssignmentRow(T_CaseRow parentT_CaseRowByCASE_ASSIGNMENT, T_InvestigatorRow parentT_InvestigatorRowByInvestigatorAssignment, int Hours, System.DateTime DateAssigned) {
                 T_AssignmentRow rowT_AssignmentRow = ((T_AssignmentRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
                         Hours,
                         DateAssigned};
-                if ((parentT_CaseRowByCaseAssignment != null)) {
-                    columnValuesArray[0] = parentT_CaseRowByCaseAssignment[0];
+                if ((parentT_CaseRowByCASE_ASSIGNMENT != null)) {
+                    columnValuesArray[0] = parentT_CaseRowByCASE_ASSIGNMENT[0];
                 }
                 if ((parentT_InvestigatorRowByInvestigatorAssignment != null)) {
                     columnValuesArray[1] = parentT_InvestigatorRowByInvestigatorAssignment[0];
@@ -2135,10 +2143,10 @@ namespace BigEyeAsgmt {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public T_CaseRow T_CaseRow {
                 get {
-                    return ((T_CaseRow)(this.GetParentRow(this.Table.ParentRelations["CaseAssignment"])));
+                    return ((T_CaseRow)(this.GetParentRow(this.Table.ParentRelations["CASE_ASSIGNMENT"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["CaseAssignment"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["CASE_ASSIGNMENT"]);
                 }
             }
             
@@ -2357,11 +2365,11 @@ namespace BigEyeAsgmt {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public T_AssignmentRow[] GetT_AssignmentRows() {
-                if ((this.Table.ChildRelations["CaseAssignment"] == null)) {
+                if ((this.Table.ChildRelations["CASE_ASSIGNMENT"] == null)) {
                     return new T_AssignmentRow[0];
                 }
                 else {
-                    return ((T_AssignmentRow[])(base.GetChildRows(this.Table.ChildRelations["CaseAssignment"])));
+                    return ((T_AssignmentRow[])(base.GetChildRows(this.Table.ChildRelations["CASE_ASSIGNMENT"])));
                 }
             }
         }

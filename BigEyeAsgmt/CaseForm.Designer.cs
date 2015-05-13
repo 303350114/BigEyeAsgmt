@@ -45,6 +45,11 @@
             this.btnModifyCase = new System.Windows.Forms.Button();
             this.btnReturn = new System.Windows.Forms.Button();
             this.btnDeleteCase = new System.Windows.Forms.Button();
+            this.lblClientNO = new System.Windows.Forms.Label();
+            this.lblClientID = new System.Windows.Forms.Label();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.txtStatus = new System.Windows.Forms.TextBox();
+            this.btnMarkClosed = new System.Windows.Forms.Button();
             this.pnlCase = new System.Windows.Forms.Panel();
             this.cmbPnlCaseType = new System.Windows.Forms.ComboBox();
             this.dtpDateOpened = new System.Windows.Forms.DateTimePicker();
@@ -58,9 +63,6 @@
             this.lblPnlDescription = new System.Windows.Forms.Label();
             this.lblPnlCaseID = new System.Windows.Forms.Label();
             this.lblPnlCaseNO = new System.Windows.Forms.Label();
-            this.lblStatus = new System.Windows.Forms.Label();
-            this.txtStatus = new System.Windows.Forms.TextBox();
-            this.btnMarkClosed = new System.Windows.Forms.Button();
             this.pnlCase.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -121,11 +123,11 @@
             // lblClient
             // 
             this.lblClient.AutoSize = true;
-            this.lblClient.Location = new System.Drawing.Point(391, 256);
+            this.lblClient.Location = new System.Drawing.Point(466, 255);
             this.lblClient.Name = "lblClient";
-            this.lblClient.Size = new System.Drawing.Size(53, 20);
+            this.lblClient.Size = new System.Drawing.Size(99, 20);
             this.lblClient.TabIndex = 7;
-            this.lblClient.Text = "Client:";
+            this.lblClient.Text = "Client Name:";
             // 
             // txtDescription
             // 
@@ -150,7 +152,7 @@
             // 
             // txtClient
             // 
-            this.txtClient.Location = new System.Drawing.Point(448, 253);
+            this.txtClient.Location = new System.Drawing.Point(565, 253);
             this.txtClient.Name = "txtClient";
             this.txtClient.Size = new System.Drawing.Size(100, 26);
             this.txtClient.TabIndex = 12;
@@ -215,132 +217,23 @@
             this.btnDeleteCase.UseVisualStyleBackColor = true;
             this.btnDeleteCase.Click += new System.EventHandler(this.btnDeleteCase_Click);
             // 
-            // pnlCase
+            // lblClientNO
             // 
-            this.pnlCase.Controls.Add(this.cmbPnlCaseType);
-            this.pnlCase.Controls.Add(this.dtpDateOpened);
-            this.pnlCase.Controls.Add(this.cmbPnlClient);
-            this.pnlCase.Controls.Add(this.btnCancel);
-            this.pnlCase.Controls.Add(this.btnSaveCase);
-            this.pnlCase.Controls.Add(this.txtPnlDescription);
-            this.pnlCase.Controls.Add(this.lblPnlClient);
-            this.pnlCase.Controls.Add(this.lblPnlDateOpened);
-            this.pnlCase.Controls.Add(this.lblPnlCaseType);
-            this.pnlCase.Controls.Add(this.lblPnlDescription);
-            this.pnlCase.Controls.Add(this.lblPnlCaseID);
-            this.pnlCase.Controls.Add(this.lblPnlCaseNO);
-            this.pnlCase.Location = new System.Drawing.Point(160, 26);
-            this.pnlCase.Name = "pnlCase";
-            this.pnlCase.Size = new System.Drawing.Size(543, 301);
-            this.pnlCase.TabIndex = 19;
-            this.pnlCase.Visible = false;
+            this.lblClientNO.AutoSize = true;
+            this.lblClientNO.Location = new System.Drawing.Point(370, 255);
+            this.lblClientNO.Name = "lblClientNO";
+            this.lblClientNO.Size = new System.Drawing.Size(74, 20);
+            this.lblClientNO.TabIndex = 18;
+            this.lblClientNO.Text = "Client ID:";
+            this.lblClientNO.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
-            // cmbPnlCaseType
+            // lblClientID
             // 
-            this.cmbPnlCaseType.FormattingEnabled = true;
-            this.cmbPnlCaseType.Location = new System.Drawing.Point(194, 100);
-            this.cmbPnlCaseType.Name = "cmbPnlCaseType";
-            this.cmbPnlCaseType.Size = new System.Drawing.Size(148, 28);
-            this.cmbPnlCaseType.TabIndex = 29;
-            // 
-            // dtpDateOpened
-            // 
-            this.dtpDateOpened.CustomFormat = "dd MMM yyyy";
-            this.dtpDateOpened.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDateOpened.Location = new System.Drawing.Point(194, 145);
-            this.dtpDateOpened.Name = "dtpDateOpened";
-            this.dtpDateOpened.Size = new System.Drawing.Size(148, 26);
-            this.dtpDateOpened.TabIndex = 28;
-            // 
-            // cmbPnlClient
-            // 
-            this.cmbPnlClient.FormattingEnabled = true;
-            this.cmbPnlClient.Location = new System.Drawing.Point(194, 188);
-            this.cmbPnlClient.Name = "cmbPnlClient";
-            this.cmbPnlClient.Size = new System.Drawing.Size(121, 28);
-            this.cmbPnlClient.TabIndex = 27;
-            this.cmbPnlClient.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.cmbPnlClient_Format);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(254, 245);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(110, 34);
-            this.btnCancel.TabIndex = 26;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // btnSaveCase
-            // 
-            this.btnSaveCase.Location = new System.Drawing.Point(115, 245);
-            this.btnSaveCase.Name = "btnSaveCase";
-            this.btnSaveCase.Size = new System.Drawing.Size(117, 34);
-            this.btnSaveCase.TabIndex = 25;
-            this.btnSaveCase.Text = "Save Case";
-            this.btnSaveCase.UseVisualStyleBackColor = true;
-            this.btnSaveCase.Click += new System.EventHandler(this.btnSaveCase_Click);
-            // 
-            // txtPnlDescription
-            // 
-            this.txtPnlDescription.Location = new System.Drawing.Point(194, 52);
-            this.txtPnlDescription.Name = "txtPnlDescription";
-            this.txtPnlDescription.Size = new System.Drawing.Size(267, 26);
-            this.txtPnlDescription.TabIndex = 20;
-            // 
-            // lblPnlClient
-            // 
-            this.lblPnlClient.AutoSize = true;
-            this.lblPnlClient.Location = new System.Drawing.Point(137, 191);
-            this.lblPnlClient.Name = "lblPnlClient";
-            this.lblPnlClient.Size = new System.Drawing.Size(53, 20);
-            this.lblPnlClient.TabIndex = 19;
-            this.lblPnlClient.Text = "Client:";
-            // 
-            // lblPnlDateOpened
-            // 
-            this.lblPnlDateOpened.AutoSize = true;
-            this.lblPnlDateOpened.Location = new System.Drawing.Point(81, 147);
-            this.lblPnlDateOpened.Name = "lblPnlDateOpened";
-            this.lblPnlDateOpened.Size = new System.Drawing.Size(109, 20);
-            this.lblPnlDateOpened.TabIndex = 18;
-            this.lblPnlDateOpened.Text = "Date Opened:";
-            // 
-            // lblPnlCaseType
-            // 
-            this.lblPnlCaseType.AutoSize = true;
-            this.lblPnlCaseType.Location = new System.Drawing.Point(102, 103);
-            this.lblPnlCaseType.Name = "lblPnlCaseType";
-            this.lblPnlCaseType.Size = new System.Drawing.Size(88, 20);
-            this.lblPnlCaseType.TabIndex = 17;
-            this.lblPnlCaseType.Text = "Case Type:";
-            // 
-            // lblPnlDescription
-            // 
-            this.lblPnlDescription.AutoSize = true;
-            this.lblPnlDescription.Location = new System.Drawing.Point(97, 55);
-            this.lblPnlDescription.Name = "lblPnlDescription";
-            this.lblPnlDescription.Size = new System.Drawing.Size(93, 20);
-            this.lblPnlDescription.TabIndex = 15;
-            this.lblPnlDescription.Text = "Description:";
-            // 
-            // lblPnlCaseID
-            // 
-            this.lblPnlCaseID.AutoSize = true;
-            this.lblPnlCaseID.Location = new System.Drawing.Point(190, 10);
-            this.lblPnlCaseID.Name = "lblPnlCaseID";
-            this.lblPnlCaseID.Size = new System.Drawing.Size(43, 20);
-            this.lblPnlCaseID.TabIndex = 14;
-            this.lblPnlCaseID.Text = "case";
-            // 
-            // lblPnlCaseNO
-            // 
-            this.lblPnlCaseNO.AutoSize = true;
-            this.lblPnlCaseNO.Location = new System.Drawing.Point(119, 11);
-            this.lblPnlCaseNO.Name = "lblPnlCaseNO";
-            this.lblPnlCaseNO.Size = new System.Drawing.Size(71, 20);
-            this.lblPnlCaseNO.TabIndex = 13;
-            this.lblPnlCaseNO.Text = "Case ID:";
+            this.lblClientID.AutoSize = true;
+            this.lblClientID.Location = new System.Drawing.Point(444, 255);
+            this.lblClientID.Name = "lblClientID";
+            this.lblClientID.Size = new System.Drawing.Size(0, 20);
+            this.lblClientID.TabIndex = 18;
             // 
             // lblStatus
             // 
@@ -368,13 +261,142 @@
             this.btnMarkClosed.UseVisualStyleBackColor = true;
             this.btnMarkClosed.Click += new System.EventHandler(this.btnMarkClosed_Click);
             // 
+            // pnlCase
+            // 
+            this.pnlCase.Controls.Add(this.cmbPnlCaseType);
+            this.pnlCase.Controls.Add(this.dtpDateOpened);
+            this.pnlCase.Controls.Add(this.cmbPnlClient);
+            this.pnlCase.Controls.Add(this.btnCancel);
+            this.pnlCase.Controls.Add(this.btnSaveCase);
+            this.pnlCase.Controls.Add(this.txtPnlDescription);
+            this.pnlCase.Controls.Add(this.lblPnlClient);
+            this.pnlCase.Controls.Add(this.lblPnlDateOpened);
+            this.pnlCase.Controls.Add(this.lblPnlCaseType);
+            this.pnlCase.Controls.Add(this.lblPnlDescription);
+            this.pnlCase.Controls.Add(this.lblPnlCaseID);
+            this.pnlCase.Controls.Add(this.lblPnlCaseNO);
+            this.pnlCase.Location = new System.Drawing.Point(167, 35);
+            this.pnlCase.Name = "pnlCase";
+            this.pnlCase.Size = new System.Drawing.Size(498, 292);
+            this.pnlCase.TabIndex = 21;
+            this.pnlCase.Visible = false;
+            // 
+            // cmbPnlCaseType
+            // 
+            this.cmbPnlCaseType.FormattingEnabled = true;
+            this.cmbPnlCaseType.Location = new System.Drawing.Point(175, 102);
+            this.cmbPnlCaseType.Name = "cmbPnlCaseType";
+            this.cmbPnlCaseType.Size = new System.Drawing.Size(148, 28);
+            this.cmbPnlCaseType.TabIndex = 41;
+            // 
+            // dtpDateOpened
+            // 
+            this.dtpDateOpened.CustomFormat = "dd MMM yyyy";
+            this.dtpDateOpened.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpDateOpened.Location = new System.Drawing.Point(175, 147);
+            this.dtpDateOpened.Name = "dtpDateOpened";
+            this.dtpDateOpened.Size = new System.Drawing.Size(148, 26);
+            this.dtpDateOpened.TabIndex = 40;
+            // 
+            // cmbPnlClient
+            // 
+            this.cmbPnlClient.FormattingEnabled = true;
+            this.cmbPnlClient.Location = new System.Drawing.Point(175, 190);
+            this.cmbPnlClient.Name = "cmbPnlClient";
+            this.cmbPnlClient.Size = new System.Drawing.Size(121, 28);
+            this.cmbPnlClient.TabIndex = 39;
+            this.cmbPnlClient.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.cmbPnlClient_Format);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(235, 247);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(110, 34);
+            this.btnCancel.TabIndex = 38;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnSaveCase
+            // 
+            this.btnSaveCase.Location = new System.Drawing.Point(96, 247);
+            this.btnSaveCase.Name = "btnSaveCase";
+            this.btnSaveCase.Size = new System.Drawing.Size(117, 34);
+            this.btnSaveCase.TabIndex = 37;
+            this.btnSaveCase.Text = "Save Case";
+            this.btnSaveCase.UseVisualStyleBackColor = true;
+            this.btnSaveCase.Click += new System.EventHandler(this.btnSaveCase_Click);
+            // 
+            // txtPnlDescription
+            // 
+            this.txtPnlDescription.Location = new System.Drawing.Point(175, 54);
+            this.txtPnlDescription.Name = "txtPnlDescription";
+            this.txtPnlDescription.Size = new System.Drawing.Size(267, 26);
+            this.txtPnlDescription.TabIndex = 36;
+            // 
+            // lblPnlClient
+            // 
+            this.lblPnlClient.AutoSize = true;
+            this.lblPnlClient.Location = new System.Drawing.Point(118, 193);
+            this.lblPnlClient.Name = "lblPnlClient";
+            this.lblPnlClient.Size = new System.Drawing.Size(53, 20);
+            this.lblPnlClient.TabIndex = 35;
+            this.lblPnlClient.Text = "Client:";
+            // 
+            // lblPnlDateOpened
+            // 
+            this.lblPnlDateOpened.AutoSize = true;
+            this.lblPnlDateOpened.Location = new System.Drawing.Point(62, 149);
+            this.lblPnlDateOpened.Name = "lblPnlDateOpened";
+            this.lblPnlDateOpened.Size = new System.Drawing.Size(109, 20);
+            this.lblPnlDateOpened.TabIndex = 34;
+            this.lblPnlDateOpened.Text = "Date Opened:";
+            // 
+            // lblPnlCaseType
+            // 
+            this.lblPnlCaseType.AutoSize = true;
+            this.lblPnlCaseType.Location = new System.Drawing.Point(83, 105);
+            this.lblPnlCaseType.Name = "lblPnlCaseType";
+            this.lblPnlCaseType.Size = new System.Drawing.Size(88, 20);
+            this.lblPnlCaseType.TabIndex = 33;
+            this.lblPnlCaseType.Text = "Case Type:";
+            // 
+            // lblPnlDescription
+            // 
+            this.lblPnlDescription.AutoSize = true;
+            this.lblPnlDescription.Location = new System.Drawing.Point(78, 57);
+            this.lblPnlDescription.Name = "lblPnlDescription";
+            this.lblPnlDescription.Size = new System.Drawing.Size(93, 20);
+            this.lblPnlDescription.TabIndex = 32;
+            this.lblPnlDescription.Text = "Description:";
+            // 
+            // lblPnlCaseID
+            // 
+            this.lblPnlCaseID.AutoSize = true;
+            this.lblPnlCaseID.Location = new System.Drawing.Point(171, 12);
+            this.lblPnlCaseID.Name = "lblPnlCaseID";
+            this.lblPnlCaseID.Size = new System.Drawing.Size(43, 20);
+            this.lblPnlCaseID.TabIndex = 31;
+            this.lblPnlCaseID.Text = "case";
+            // 
+            // lblPnlCaseNO
+            // 
+            this.lblPnlCaseNO.AutoSize = true;
+            this.lblPnlCaseNO.Location = new System.Drawing.Point(100, 13);
+            this.lblPnlCaseNO.Name = "lblPnlCaseNO";
+            this.lblPnlCaseNO.Size = new System.Drawing.Size(71, 20);
+            this.lblPnlCaseNO.TabIndex = 30;
+            this.lblPnlCaseNO.Text = "Case ID:";
+            // 
             // CaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(765, 426);
-            this.Controls.Add(this.btnMarkClosed);
             this.Controls.Add(this.pnlCase);
+            this.Controls.Add(this.lblClientID);
+            this.Controls.Add(this.lblClientNO);
+            this.Controls.Add(this.btnMarkClosed);
             this.Controls.Add(this.btnDeleteCase);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.btnModifyCase);
@@ -422,7 +444,17 @@
         private System.Windows.Forms.Button btnModifyCase;
         private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.Button btnDeleteCase;
+        private System.Windows.Forms.Label lblClientID;
+        private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.TextBox txtStatus;
+        private System.Windows.Forms.Button btnMarkClosed;
+        private System.Windows.Forms.Label lblClientNO;
         private System.Windows.Forms.Panel pnlCase;
+        private System.Windows.Forms.ComboBox cmbPnlCaseType;
+        private System.Windows.Forms.DateTimePicker dtpDateOpened;
+        private System.Windows.Forms.ComboBox cmbPnlClient;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnSaveCase;
         private System.Windows.Forms.TextBox txtPnlDescription;
         private System.Windows.Forms.Label lblPnlClient;
         private System.Windows.Forms.Label lblPnlDateOpened;
@@ -430,13 +462,5 @@
         private System.Windows.Forms.Label lblPnlDescription;
         private System.Windows.Forms.Label lblPnlCaseID;
         private System.Windows.Forms.Label lblPnlCaseNO;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnSaveCase;
-        private System.Windows.Forms.ComboBox cmbPnlClient;
-        private System.Windows.Forms.DateTimePicker dtpDateOpened;
-        private System.Windows.Forms.ComboBox cmbPnlCaseType;
-        private System.Windows.Forms.Label lblStatus;
-        private System.Windows.Forms.TextBox txtStatus;
-        private System.Windows.Forms.Button btnMarkClosed;
     }
 }

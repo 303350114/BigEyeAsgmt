@@ -133,11 +133,11 @@
             // lblLicensed
             // 
             this.lblLicensed.AutoSize = true;
-            this.lblLicensed.Location = new System.Drawing.Point(372, 259);
+            this.lblLicensed.Location = new System.Drawing.Point(321, 259);
             this.lblLicensed.Name = "lblLicensed";
-            this.lblLicensed.Size = new System.Drawing.Size(77, 20);
+            this.lblLicensed.Size = new System.Drawing.Size(128, 20);
             this.lblLicensed.TabIndex = 7;
-            this.lblLicensed.Text = "Licensed:";
+            this.lblLicensed.Text = "Licensed Status:";
             // 
             // btnPrevious
             // 
@@ -252,9 +252,9 @@
             this.pnlInvestigator.Controls.Add(this.lblPnlLastName);
             this.pnlInvestigator.Controls.Add(this.lblPnlInvestigatorID);
             this.pnlInvestigator.Controls.Add(this.lblPnlInvestigatorNO);
-            this.pnlInvestigator.Location = new System.Drawing.Point(232, 12);
+            this.pnlInvestigator.Location = new System.Drawing.Point(274, 9);
             this.pnlInvestigator.Name = "pnlInvestigator";
-            this.pnlInvestigator.Size = new System.Drawing.Size(389, 324);
+            this.pnlInvestigator.Size = new System.Drawing.Size(387, 327);
             this.pnlInvestigator.TabIndex = 19;
             this.pnlInvestigator.Visible = false;
             // 
@@ -338,11 +338,11 @@
             // lblPnlLicensed
             // 
             this.lblPnlLicensed.AutoSize = true;
-            this.lblPnlLicensed.Location = new System.Drawing.Point(80, 233);
+            this.lblPnlLicensed.Location = new System.Drawing.Point(29, 233);
             this.lblPnlLicensed.Name = "lblPnlLicensed";
-            this.lblPnlLicensed.Size = new System.Drawing.Size(77, 20);
+            this.lblPnlLicensed.Size = new System.Drawing.Size(128, 20);
             this.lblPnlLicensed.TabIndex = 6;
-            this.lblPnlLicensed.Text = "Licensed:";
+            this.lblPnlLicensed.Text = "Licensed Status:";
             // 
             // lblPnlCellPhone
             // 
